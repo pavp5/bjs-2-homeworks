@@ -60,9 +60,9 @@ function makeWork(arrOfArr, func) {
   //     if (maxWorkerResult < funcResult) maxWorkerResult = funcResult;
   // }
   // return maxWorkerResult;
-  let funcResult = 0;
+  let currentResult = 0;
   return arrOfArr.reduce(function (maxWorkerResult, current) {
-    funcResult = func(...current);
-    return (maxWorkerResult > funcResult ? maxWorkerResult : funcResult);
+    currentResult = func(...current);
+    return (maxWorkerResult > currentResult ? maxWorkerResult : currentResult);
   }, -Infinity);
 }
