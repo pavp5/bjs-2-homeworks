@@ -8,12 +8,6 @@ class AlarmClock {
         if (!time || !callback) {
             throw new Error('Отсутствуют обязательные аргументы');
         }
-        // for (let item of this.alarmCollection) {
-        //     if (item.time === time) {
-        //         console.warn('Уже присутствует звонок на это же время');
-        //         return;
-        //     }
-        // }
         this.alarmCollection.forEach((item) => {
             if (item.time === time) {
                 console.warn('Уже присутствует звонок на это же время');
@@ -25,7 +19,7 @@ class AlarmClock {
             callback: callback,
             time: time,
             canCall: true
-        })
+        });
     }
 
     removeClock(time) {
@@ -36,7 +30,7 @@ class AlarmClock {
 
     getCurrentFormattedTime() {
         let now = new Date();
-        return (`${now.getHours()}:${now.getMinutes()}`);        
+        return (`${now.getHours()}:${now.getMinutes()}`);
     }
 
     start() {
